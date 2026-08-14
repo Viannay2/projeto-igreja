@@ -1,0 +1,141 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Membro — Sistema de Gestão da Igreja</title>
+ 
+    <link rel="stylesheet" href="css/style2.css">
+ 
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+ 
+    <div class="container">
+ 
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+ 
+                <a href="membros.html" class="active" aria-current="page"><i class="fa-solid fa-users"></i>Membros</a>
+ 
+                <a href="#"><i class="fa-solid fa-people-roof"></i>
+                Famílias</a>
+ 
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+ 
+                <a href="#">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+ 
+                <a href="#"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+ 
+                <a href="#"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+ 
+                <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+ 
+            </nav>
+        </aside>
+ 
+        <main id="conteudo-principal">
+ 
+            <header>
+                <h1>Novo Membro</h1>
+ 
+                <div class="topo">
+                    <a href="membros.html" class="btn-voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Voltar pra lista
+                    </a>
+                </div>
+            </header>
+ 
+            <section class="form-membro">
+                <form id="form-cadastro" novalidate>
+ 
+                    <fieldset>
+                        <legend>Dados pessoais</legend>
+ 
+                        <div class="campo">
+                            <label for="nome_completo" class="obrigatorio">Nome completo</label>
+                            <input type="text" id="nome_completo" name="nome_completo" required placeholder="Ex: Maria da Silva Santos">
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="data_nascimento">Data de nascimento</label>
+                            <input type="date" id="data_nascimento" name="data_nascimento">
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(11) 91234-5678">
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="nome@email.com">
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="endereco">Endereço</label>
+                            <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro">
+                        </div>
+                    </fieldset>
+ 
+                    <fieldset>
+                        <legend>Vida na igreja</legend>
+ 
+                        <div class="campo">
+                            <label for="data_batismo">Data de batismo</label>
+                            <input type="date" id="data_batismo" name="data_batismo">
+                            <p class="dica-campo">Deixe em branco se ainda não foi batizado(a)</p>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="status">Status</label>
+                            <select id="status" name="status">
+                                <option value="ativo" selected>Ativo</option>
+                                <option value="congregando">Congregando</option>
+                                <option value="afastado">Afastado</option>
+                            </select>
+                        </div>
+ 
+                        <div class="campo">
+                            <label for="familia">Família</label>
+                            <input type="text" id="familia" name="familia" placeholder="Ex: Família Santos">
+                            <p class="dica-campo">Usado pra agrupar membros da mesma casa</p>
+                        </div>
+                    </fieldset>
+ 
+                    <p class="aviso-dados">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Esses dados serão usados só pela administração da igreja, e podem ser removidos a pedido do membro.
+                    </p>
+ 
+                    <button type="submit" class="btn-salvar">Cadastrar membro</button>
+                    <p id="status-msg" role="status"></p>
+                </form>
+            </section>
+ 
+        </main>
+ 
+    </div>
+ 
+    <script src="js/cadastro.js"></script>
+    <script src="js/storage.js"></script>
+ 
+</body>
+</html>
+ 

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="família.html"><i class="fa-solid fa-people-roof"></i>
+                Famílias</a>
+
+                <a href="evento.html" class="active" aria-current="page"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="config.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Eventos e Datas</h1>
+
+                <div class="topo">
+                    <a href="cadastro-evento.html" class="btn-novo">
+                        <i class="fa-solid fa-plus"></i>
+                        Novo evento
+                    </a>
+                </div>
+            </header>
+
+            <section class="destaque-evento" id="destaque-evento">
+                <!-- Preenchido pelo JavaScript com o próximo evento importante -->
+            </section>
+
+            <section class="lista-eventos">
+                <h2>Datas comemorativas</h2>
+                <p class="hint-eventos">Datas que passam despercebidas, mas merecem um lembrete — um abraço, uma mensagem, uma lembrança no culto.</p>
+
+                <div class="grid-eventos" id="grid-eventos">
+                    <!-- Preenchido pelo JavaScript -->
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/evento1.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Evento — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style2.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="família.html"><i class="fa-solid fa-people-roof"></i>
+                Famílias</a>
+
+                <a href="evento.html" class="active" aria-current="page"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="config.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Novo Evento</h1>
+
+                <div class="topo">
+                    <a href="evento.html" class="btn-voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Voltar pra lista
+                    </a>
+                </div>
+            </header>
+
+            <section class="form-membro">
+                <form id="form-evento" novalidate>
+
+                    <fieldset>
+                        <legend>Dados do evento</legend>
+
+                        <div class="campo">
+                            <label for="nome" class="obrigatorio">Nome do evento</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Ex: Culto de Ação de Graças">
+                        </div>
+
+                        <div class="campo">
+                            <label for="data" class="obrigatorio">Data</label>
+                            <input type="date" id="data" name="data" required>
+                        </div>
+
+                        <div class="campo">
+                            <label for="tipo" class="obrigatorio">Tipo</label>
+                            <select id="tipo" name="tipo" required>
+                                <option value="">Selecione</option>
+                                <option value="importante">Importante (precisa de preparação)</option>
+                                <option value="lembrete">Lembrete simples</option>
+                            </select>
+                            <p class="dica-campo">"Importante" aparece em destaque no topo da página de Eventos</p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="icone" class="obrigatorio">Ícone</label>
+                            <select id="icone" name="icone" required>
+                                <option value="">Selecione</option>
+                                <option value="fa-cross">Cruz</option>
+                                <option value="fa-church">Igreja</option>
+                                <option value="fa-hands-praying">Mãos em oração</option>
+                                <option value="fa-music">Música</option>
+                                <option value="fa-book-bible">Bíblia</option>
+                                <option value="fa-people-group">Grupo de pessoas</option>
+                                <option value="fa-gift">Presente</option>
+                                <option value="fa-cake-candles">Aniversário</option>
+                                <option value="fa-tree">Árvore/Natal</option>
+                                <option value="fa-star">Estrela</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-salvar">Cadastrar evento</button>
+                    <p id="status-msg" role="status"></p>
+                </form>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/cadastro-evento.js"></script>
+
+</body>
+</html>

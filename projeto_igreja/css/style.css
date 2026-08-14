@@ -1,0 +1,1031 @@
+@charset "UTF-8";
+
+/* =====================================================
+   GOOGLE FONT
+   ===================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* =====================================================
+   VARIÁVEIS
+   ===================================================== */
+
+:root {
+    --magenta: #d800ad;
+    --rosa: #e4066f;
+    --laranja: #ff7a00;
+    --amarelo: #f2c200;
+    --azul: #0ea8df;
+
+    --fundo: #f4f6fa;
+    --branco: #ffffff;
+    --texto: #292929;
+    --cinza: #777777;
+
+    --degrade-logo: linear-gradient(
+        135deg,
+        #d800ad 0%,
+        #e4066f 35%,
+        #ff7a00 70%,
+        #f2c200 100%
+    );
+}
+
+
+/* =====================================================
+   RESET
+   ===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: var(--fundo);
+    color: var(--texto);
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+/* =====================================================
+   ACESSIBILIDADE
+   ===================================================== */
+
+.skip-link {
+    position: absolute;
+    top: -60px;
+    left: 10px;
+
+    background: var(--magenta);
+    color: white;
+
+    padding: 10px 18px;
+    border-radius: 8px;
+
+    text-decoration: none;
+    z-index: 1000;
+
+    transition: top .2s ease;
+}
+
+.skip-link:focus {
+    top: 10px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =====================================================
+   MENU LATERAL
+   ===================================================== */
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    padding: 25px;
+
+    color: white;
+
+    background: linear-gradient(
+        180deg,
+        #d800ad 0%,
+        #e4066f 45%,
+        #ff7a00 75%,
+        #f2c200 100%
+    );
+
+    box-shadow: 3px 0 15px rgba(0, 0, 0, .08);
+
+    z-index: 1000;
+}
+
+
+/* LOGO */
+
+.logo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.logo i {
+    display: block;
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.logo h2 {
+    font-size: 24px;
+}
+
+
+/* MENU */
+
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.sidebar nav a {
+    display: block;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    color: white;
+    text-decoration: none;
+
+    transition:
+        background .25s ease,
+        transform .2s ease;
+}
+
+.sidebar nav a i {
+    width: 25px;
+}
+
+.sidebar nav a:hover {
+    background: rgba(255, 255, 255, .18);
+    transform: translateX(3px);
+}
+
+.sidebar nav a:focus {
+    outline: 3px solid white;
+    outline-offset: 2px;
+}
+
+.sidebar nav a.active {
+    background: rgba(255, 255, 255, .25);
+
+    box-shadow: inset 3px 0 0 white;
+}
+
+
+/* =====================================================
+   CONTEÚDO PRINCIPAL
+   ===================================================== */
+
+main {
+    flex: 1;
+
+    margin-left: 260px;
+    padding: 30px;
+}
+
+
+/* =====================================================
+   CABEÇALHO
+   ===================================================== */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 32px;
+    color: var(--texto);
+}
+
+
+/* TOPO */
+
+.topo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.topo input {
+    width: 280px;
+
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.topo input:focus {
+    outline: 3px solid var(--rosa);
+    outline-offset: 2px;
+}
+
+.topo button {
+    width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: var(--azul);
+    color: white;
+
+    cursor: pointer;
+
+    transition: transform .2s ease;
+}
+
+.topo button:hover {
+    transform: scale(1.08);
+}
+
+.topo button:focus {
+    outline: 3px solid var(--azul);
+    outline-offset: 2px;
+}
+
+.topo img {
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+}
+
+
+/* =====================================================
+   CARDS
+   ===================================================== */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+.card {
+    padding: 25px;
+
+    background: white;
+
+    border: 1px solid rgba(216, 0, 173, .06);
+    border-radius: 15px;
+
+    text-align: center;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .05);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px rgba(216, 0, 173, .10);
+}
+
+.card i {
+    font-size: 42px;
+
+    color: var(--azul);
+
+    margin-bottom: 15px;
+}
+
+.card h2 {
+    font-size: 36px;
+
+    background: var(--degrade-logo);
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    color: transparent;
+}
+
+.card p {
+    color: var(--cinza);
+}
+
+
+/* =====================================================
+   GRÁFICO
+   ===================================================== */
+
+.grafico {
+    padding: 25px;
+    margin-bottom: 35px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .04);
+}
+
+.grafico h2 {
+    margin-bottom: 20px;
+}
+
+.grafico-area {
+    height: 300px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px dashed #d8d8d8;
+    border-radius: 12px;
+
+    color: #888;
+}
+
+
+/* =====================================================
+   TABELAS
+   ===================================================== */
+
+.membros {
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .05);
+
+    overflow-x: auto;
+}
+
+.membros h2 {
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: linear-gradient(
+        90deg,
+        #d800ad,
+        #e4066f,
+        #ff7a00
+    );
+
+    color: white;
+}
+
+th,
+td {
+    padding: 15px;
+    text-align: left;
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(even) {
+    background: #fafafa;
+}
+
+tbody tr:hover {
+    background: #fff0f8;
+}
+
+
+/* =====================================================
+   PÁGINA DE MEMBROS
+   ===================================================== */
+
+.acoes-membros {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    flex-wrap: wrap;
+    gap: 15px;
+
+    margin-bottom: 25px;
+}
+
+.btn-novo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 12px 20px;
+
+    background: var(--degrade-logo);
+    color: white;
+
+    border: none;
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 500;
+
+    box-shadow: 0 4px 12px rgba(228, 6, 111, .20);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+.btn-novo:hover {
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 6px 16px rgba(228, 6, 111, .28);
+}
+
+.btn-novo:focus {
+    outline: 3px solid var(--azul);
+    outline-offset: 2px;
+}
+
+
+/* FILTRO */
+
+.filtros select {
+    padding: 12px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: white;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .08);
+}
+
+.filtros select:focus {
+    outline: 3px solid var(--rosa);
+    outline-offset: 2px;
+}
+
+
+/* STATUS */
+
+.badge {
+    display: inline-block;
+
+    padding: 5px 12px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.badge-ativo {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.badge-congregando {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.badge-afastado {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+
+/* AÇÕES */
+
+.col-acoes {
+    display: flex;
+    gap: 8px;
+
+    white-space: nowrap;
+}
+
+.icon-btn {
+    width: 34px;
+    height: 34px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: #f3f6fb;
+    color: var(--azul);
+
+    cursor: pointer;
+
+    transition: background .2s ease;
+}
+
+.icon-btn:hover {
+    background: #e8f7fc;
+}
+
+.icon-btn:focus {
+    outline: 3px solid var(--azul);
+    outline-offset: 2px;
+}
+
+
+/* =====================================================
+   PÁGINA DE EVENTOS
+   ===================================================== */
+
+.destaque-evento {
+    margin-bottom: 35px;
+}
+
+.destaque-conteudo {
+    padding: 28px;
+
+    background: linear-gradient(
+        135deg,
+        #d800ad,
+        #e4066f,
+        #ff7a00
+    );
+
+    color: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .10);
+}
+
+.destaque-eyebrow {
+    font-size: 13px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+
+    opacity: .85;
+}
+
+.destaque-corpo {
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    margin: 12px 0;
+}
+
+.destaque-corpo i {
+    font-size: 48px;
+    opacity: .9;
+}
+
+.destaque-corpo h2 {
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+
+.destaque-corpo p {
+    font-size: 16px;
+}
+
+.destaque-aviso {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 10px 14px;
+
+    background: rgba(255, 255, 255, .15);
+
+    border-radius: 8px;
+
+    font-size: 13.5px;
+}
+
+
+/* LISTA DE EVENTOS */
+
+.lista-eventos {
+    padding: 25px;
+
+    background: white;
+
+    border-radius: 15px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, .05);
+}
+
+.hint-eventos {
+    margin: 6px 0 20px;
+
+    color: var(--cinza);
+    font-size: 14px;
+}
+
+.grid-eventos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(160px, 1fr));
+
+    gap: 18px;
+}
+
+.card-evento {
+    padding: 18px;
+
+    background: var(--fundo);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    transition: transform .2s ease;
+}
+
+.card-evento:hover {
+    transform: translateY(-3px);
+}
+
+.card-evento i {
+    font-size: 26px;
+
+    color: var(--azul);
+
+    margin-bottom: 8px;
+}
+
+.card-evento h3 {
+    font-size: 15px;
+    margin-bottom: 6px;
+}
+
+.data-card {
+    font-size: 13px;
+    color: #888;
+}
+
+.contagem-card {
+    margin-top: 4px;
+
+    color: var(--rosa);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.card-evento-importante {
+    background: #fff8e1;
+    border: 1px solid #f2c200;
+}
+
+.card-evento-importante i {
+    color: #d49f00;
+}
+
+
+/* =====================================================
+   RESPONSIVO - TABLET
+   ===================================================== */
+
+@media (max-width: 900px) {
+
+    .sidebar {
+        width: 80px;
+    }
+
+    .logo h2 {
+        display: none;
+    }
+
+    .sidebar nav a {
+        text-align: center;
+        font-size: 0;
+    }
+
+    .sidebar nav a i {
+        display: block;
+
+        width: auto;
+
+        margin: auto;
+
+        font-size: 22px;
+    }
+
+    main {
+        margin-left: 80px;
+    }
+
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .topo input {
+        width: 100%;
+    }
+}
+
+
+/* =====================================================
+   RESPONSIVO - CELULAR
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+    /* MENU INFERIOR */
+
+    .sidebar {
+        width: 100%;
+        height: 52px;
+
+        top: auto;
+        bottom: 0;
+        left: 0;
+
+        padding: 2px;
+
+        background: linear-gradient(
+            90deg,
+            #d800ad,
+            #e4066f,
+            #ff7a00,
+            #f2c200
+        );
+
+        box-shadow:
+            0 -3px 15px rgba(0, 0, 0, .10);
+    }
+
+    .sidebar .logo {
+        display: none;
+    }
+
+    .sidebar nav {
+        width: 100%;
+        height: 100%;
+
+        display: flex;
+        flex-direction: row;
+
+        justify-content: space-around;
+        align-items: center;
+
+        gap: 1px;
+    }
+
+    .sidebar nav a {
+        width: 42px;
+        height: 42px;
+
+        padding: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border-radius: 9px;
+
+        font-size: 0;
+    }
+
+    .sidebar nav a i {
+        width: auto;
+        margin: 0;
+
+        font-size: 18px;
+    }
+
+    .sidebar nav a.active {
+        background: rgba(255, 255, 255, .28);
+
+        box-shadow: none;
+        transform: none;
+    }
+
+
+    /* CONTEÚDO */
+
+    main {
+        width: 100%;
+
+        margin-left: 0;
+
+        padding: 9px;
+        padding-bottom: 66px;
+    }
+
+
+    /* CABEÇALHO */
+
+    header {
+        margin-bottom: 10px;
+
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    header h1 {
+        font-size: 19px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .topo {
+        gap: 7px;
+    }
+
+    .topo input {
+        width: 130px;
+
+        padding: 9px;
+
+        font-size: 12px;
+    }
+
+    .topo button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .topo img {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    /* CARDS */
+
+    .cards {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 7px;
+
+        margin-bottom: 12px;
+    }
+
+    .card {
+        padding: 10px 5px;
+
+        border-radius: 10px;
+    }
+
+    .card i {
+        font-size: 22px;
+        margin-bottom: 4px;
+    }
+
+    .card h2 {
+        font-size: 22px;
+    }
+
+    .card p {
+        font-size: 10px;
+        margin-top: 3px;
+    }
+
+
+    /* GRÁFICO */
+
+    .grafico {
+        padding: 12px;
+        margin-bottom: 18px;
+
+        border-radius: 10px;
+    }
+
+    .grafico h2 {
+        font-size: 17px;
+        margin-bottom: 8px;
+    }
+
+    .grafico-area {
+        height: 150px;
+        font-size: 13px;
+    }
+
+
+    /* TABELA */
+
+    .membros {
+        padding: 15px;
+        border-radius: 12px;
+    }
+
+    .membros h2 {
+        font-size: 19px;
+        margin-bottom: 12px;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+
+
+    /* MEMBROS */
+
+    .acoes-membros {
+        align-items: stretch;
+    }
+
+    .btn-novo {
+        justify-content: center;
+    }
+
+    .filtros select {
+        width: 100%;
+    }
+
+
+    /* EVENTOS */
+
+    .destaque-conteudo {
+        padding: 20px;
+    }
+
+    .destaque-corpo {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .destaque-corpo i {
+        font-size: 38px;
+    }
+
+    .destaque-corpo h2 {
+        font-size: 21px;
+    }
+
+    .lista-eventos {
+        padding: 15px;
+    }
+
+    .grid-eventos {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+    .card-evento {
+        padding: 14px 8px;
+    }
+}
+
+
+/* =====================================================
+   CELULAR PEQUENO
+   ===================================================== */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 17px;
+    }
+
+    .topo input {
+        width: 105px;
+    }
+
+    .topo button {
+        display: none;
+    }
+
+    .topo {
+        gap: 5px;
+    }
+
+    .card h2 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 9px;
+    }
+}
