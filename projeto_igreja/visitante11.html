@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitantes — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html" class="active" aria-current="page"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="família.html"><i class="fa-solid fa-people-roof"></i></i>
+                Famílias</a>
+                
+
+                <a href="evento.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="config.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Visitantes</h1>
+
+                <div class="topo">
+                    <input type="search" placeholder="Pesquisar visitante..." aria-label="Pesquisar visitante">
+
+                    <button aria-label="Notificações">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+
+                    <a href="perfil.html">
+                        <img src="imagens/avatar.png" alt="Administrador">
+                    </a>
+                </div>
+            </header>
+
+            <section class="acoes-membros">
+                <a href="cadastrovisitante.html" class="btn-novo">
+                    <i class="fa-solid fa-plus"></i>
+                    Novo visitante
+                </a>
+            </section>
+
+            <section class="membros">
+                <h2>Últimos visitantes</h2>
+
+                <table>
+
+                    <caption class="sr-only">Lista de visitantes recentes</caption>
+                  <thead>
+
+                    <tr>
+                        <th>Nome</th>
+                        <th>Data da visita</th>
+                        <th>Convidado por</th>
+                        <th>Status</th>
+                        <th>Ações</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <tr>
+                        <td>Renata Farias</td>
+                        <td>03/08/2026</td>
+                        <td>Maria Sousa</td>
+                        <td><span class="badge badge-ativo">Retornou</span></td>
+                        <td class="col-acoes">
+                            <button class="icon-btn" aria-label="Converter Renata Farias em membro"><i class="fa-solid fa-user-plus"></i></button>
+                            <button class="icon-btn" aria-label="Editar Renata Farias"><i class="fa-solid fa-pen"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Diego Martins</td>
+                        <td>27/07/2026</td>
+                        <td>João Silva</td>
+                        <td><span class="badge badge-congregando">Acompanhando</span></td>
+                        <td class="col-acoes">
+                            <button class="icon-btn" aria-label="Converter Diego Martins em membro"><i class="fa-solid fa-user-plus"></i></button>
+                            <button class="icon-btn" aria-label="Editar Diego Martins"><i class="fa-solid fa-pen"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Beatriz Nogueira</td>
+                        <td>20/07/2026</td>
+                        <td>Carlos Oliveira</td>
+                        <td><span class="badge badge-afastado">Não retornou</span></td>
+                        <td class="col-acoes">
+                            <button class="icon-btn" aria-label="Converter Beatriz Nogueira em membro"><i class="fa-solid fa-user-plus"></i></button>
+                            <button class="icon-btn" aria-label="Editar Beatriz Nogueira"><i class="fa-solid fa-pen"></i></button>
+                        </td>
+                    </tr>
+
+                  </tbody>
+
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

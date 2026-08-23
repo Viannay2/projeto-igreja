@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão da igreja</title>
+
+    <link rel="stylesheet" href="css/style2.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html" class="active" aria-current="page"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="família.html"><i class="fa-solid fa-people-roof"></i></i>
+                Famílias</a>
+                
+
+                <a href="evento.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="config.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+
+    <h1>Painel Administrativo</h1>
+
+    <div class="topo">
+
+        <input type="search" placeholder="Pesquisar membro..." aria-label="Pesquisar membro">
+
+        <button aria-label="Notificações">
+            <i class="fa-solid fa-bell"></i>
+        </button>
+
+        <a href="perfil.html" class="link-perfil">
+            <img src="img.jpg" alt="Administrador">
+        </a>
+
+    </div>
+
+</header>
+
+
+            <section class="cards">
+
+                <div class="card">
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2>325</h2>
+
+                    <p>Membros</p>
+
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-user-check"></i>
+
+                    <h2>290</h2>
+
+                    <p>Ativos</p>
+                </div>
+
+                <div class="card"><i class="fa-solid fa-water"></i>
+
+                    <h2>241</h2>
+
+                    <p>Batizados</p>
+                </div>
+
+                <div class="card">
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                   <h2>18</h2>
+
+                   <p>Aniversariantes</p>
+
+                </div>
+            </section>
+
+            <section class="grafico">
+
+                <h2>Crescimento da igreja</h2>
+
+                <div class="grafico-area">
+
+                    <p>Gráfico será exibido aqui futuramente.</p>
+                </div>
+            </section>
+
+            <section class="membros">
+
+                <h2>Últimos Membros Cadastrados</h2>
+
+                <table>
+
+                    <caption class="sr-only">Últimos membros cadastrados</caption>
+                  <thead>
+
+                    <tr>
+                        <th>Nome</th>
+                        <th>Família</th>
+                        <th>Status</th>
+                        <th>Telefone</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <tr>
+
+                        <td>João Silva</td>
+                        <td>Silva</td>
+                        <td>Ativo</td>
+                        <td>(21)99999-9999</td>
+                    </tr>
+
+                    <tr>
+                        <td>Maria Sousa</td>
+                        <td>Souza</td>
+                        <td>Congregando</td>
+                        <td>(21)99999-9999</td>
+                    </tr>
+
+                    <tr>
+
+                        <td>Carlos Oliveira</td>
+                        <td>Oliveira</td>
+                        <td>Ativo</td>
+                        <td>(21)97777-7777</td>
+
+                    </tr>
+
+                  </tbody>
+
+                </table>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>

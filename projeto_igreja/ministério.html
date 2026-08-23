@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ministérios — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html" class="active" aria-current="page"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="família.html"><i class="fa-solid fa-people-roof"></i></i>
+                Famílias</a>
+                
+
+                <a href="evento.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="config.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Ministérios</h1>
+
+                <div class="topo">
+                    <input type="search" placeholder="Pesquisar ministério..." aria-label="Pesquisar ministério">
+
+                    <button aria-label="Notificações">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+
+                    <a href="perfil.html">
+                        <img src="imagens/avatar.png" alt="Administrador">
+                    </a>
+                </div>
+            </header>
+
+            <section class="acoes-membros">
+                <a href="#" class="btn-novo">
+                    <i class="fa-solid fa-plus"></i>
+                    Novo ministério
+                </a>
+            </section>
+
+            <section class="lista-eventos">
+                <div class="grid-eventos">
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-music"></i>
+                        <h3>Louvor</h3>
+                        <p class="data-card">Líder: Ana Paula</p>
+                        <p class="contagem-card">12 integrantes</p>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-child-reaching"></i>
+                        <h3>Infantil</h3>
+                        <p class="data-card">Líder: Fernanda Lima</p>
+                        <p class="contagem-card">8 integrantes</p>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h3>Jovens</h3>
+                        <p class="data-card">Líder: Pedro Henrique</p>
+                        <p class="contagem-card">15 integrantes</p>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-hands-holding-child"></i>
+                        <h3>Diaconato</h3>
+                        <p class="data-card">Líder: José Carlos</p>
+                        <p class="contagem-card">6 integrantes</p>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-utensils"></i>
+                        <h3>Ação Social</h3>
+                        <p class="data-card">Líder: Rosana Alves</p>
+                        <p class="contagem-card">10 integrantes</p>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-book-bible"></i>
+                        <h3>Ensino / EBD</h3>
+                        <p class="data-card">Líder: Marcos Vinícius</p>
+                        <p class="contagem-card">7 integrantes</p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>
