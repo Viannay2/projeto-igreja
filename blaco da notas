@@ -1,0 +1,77 @@
+https://chatgpt.com/c/6a81f460-d178-83e9-afb3-588d264c318e
+
+
+https://claude.ai/chat/24d60884-5ba6-4868-8779-914da5ef95cf
+
+
+cd sistema-igreja-api
+
+python migra.py
+
+python backups.py
+
+python -m uvicorn main:app --reload
+
+
+AGORA
+
+1. Sistema funcionando localmente
+2. Backup do banco
+3. Login
+4. Controle de acesso
+5. GitHub
+6. API online
+7. Banco online
+
+DEPOIS
+
+8. Cada pessoa recebe seu próprio login
+9. Criar permissões
+10. Separar os dados de cada cliente
+11. Sistema pronto para vários clientes
+
+
+
+1️⃣ Backup
+2️⃣ Login
+3️⃣ Permissões
+4️⃣ Usuários
+5️⃣ Organização
+6️⃣ Igrejas
+7️⃣ Separação dos dados por igreja
+8️⃣ Planos e limite de 35 membros
+9️⃣ Pagamento automático
+🔟 PostgreSQL
+
+
+
+
+
+SISTEMA
+│
+├── 🔐 Login
+│
+├── 👑 Administrador
+│      └── acesso total
+│
+├── 📝 Secretário
+│      └── acesso às funções permitidas
+│
+└── 👤 Usuário
+       └── acesso limitado
+
+
+
+       Organização
+│
+├── Igreja 1
+│   ├── Admin
+│   ├── Secretário
+│   └── Usuários
+│
+├── Igreja 2
+│   ├── Admin
+│   └── Usuários
+│
+└── Igreja 3
+    └── ...

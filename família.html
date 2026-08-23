@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famílias — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="família.html" class="active" aria-current="page"><i class="fa-solid fa-people-roof"></i>
+                Famílias</a>
+
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Famílias</h1>
+
+                <div class="topo">
+                    <input type="search" placeholder="Pesquisar família..." aria-label="Pesquisar família">
+
+                    <button aria-label="Notificações">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+
+                    <a href="perfil.html">
+                        <img src="imagens/avatar.png" alt="Administrador">
+                    </a>
+                </div>
+            </header>
+
+            <section class="acoes-membros">
+                <a href="#" class="btn-novo">
+                    <i class="fa-solid fa-plus"></i>
+                    Nova família
+                </a>
+            </section>
+
+            <section class="membros">
+                <h2>Todas as famílias</h2>
+
+                <table>
+
+                    <caption class="sr-only">Lista de famílias cadastradas</caption>
+                  <thead>
+
+                    <tr>
+                        <th>Família</th>
+                        <th>Responsável</th>
+                        <th>Membros</th>
+                        <th>Ações</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+
+                    <tr>
+                        <td>Família Silva</td>
+                        <td>João Silva</td>
+                        <td>4 membros</td>
+                        <td class="col-acoes">
+                            <button class="icon-btn" aria-label="Ver membros da Família Silva"><i class="fa-solid fa-eye"></i></button>
+                            <button class="icon-btn" aria-label="Editar Família Silva"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn" aria-label="Excluir Família Silva"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Família Souza</td>
+                        <td>Maria Sousa</td>
+                        <td>2 membros</td>
+                        <td class="col-acoes">
+                            <button class="icon-btn" aria-label="Ver membros da Família Souza"><i class="fa-solid fa-eye"></i></button>
+                            <button class="icon-btn" aria-label="Editar Família Souza"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn" aria-label="Excluir Família Souza"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td>Família Oliveira</td>
+                        <td>Carlos Oliveira</td>
+                        <td>1 membro</td>
+                        <td class="col-acoes">
+                            <button class="icon-btn" aria-label="Ver membros da Família Oliveira"><i class="fa-solid fa-eye"></i></button>
+                            <button class="icon-btn" aria-label="Editar Família Oliveira"><i class="fa-solid fa-pen"></i></button>
+                            <button class="icon-btn" aria-label="Excluir Família Oliveira"><i class="fa-solid fa-trash"></i></button>
+                        </td>
+                    </tr>
+
+                  </tbody>
+
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+</body>
+</html>

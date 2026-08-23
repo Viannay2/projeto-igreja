@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Ministério — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html" class="active" aria-current="page">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Novo Ministério</h1>
+
+                <div class="topo">
+                    <a href="ministério.html" class="btn-voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Voltar pra lista
+                    </a>
+                </div>
+            </header>
+
+            <section class="form-membro">
+                <form id="form-ministerio" novalidate>
+
+                    <fieldset>
+                        <legend>Dados do ministério</legend>
+
+                        <div class="campo">
+                            <label for="nome" class="obrigatorio">Nome do ministério</label>
+                            <input type="text" id="nome" name="nome" required placeholder="Ex: Louvor">
+                        </div>
+
+                        <div class="campo">
+                            <label for="lider">Líder responsável</label>
+                            <input type="text" id="lider" name="lider" placeholder="Ex: Ana Paula">
+                        </div>
+
+                        <div class="campo">
+                            <label for="icone" class="obrigatorio">Ícone</label>
+                            <select id="icone" name="icone" required>
+                                <option value="">Selecione</option>
+                                <option value="fa-music">Música</option>
+                                <option value="fa-child-reaching">Infantil</option>
+                                <option value="fa-people-group">Grupo de pessoas</option>
+                                <option value="fa-hands-holding-child">Diaconato</option>
+                                <option value="fa-utensils">Ação social</option>
+                                <option value="fa-book-bible">Ensino/Bíblia</option>
+                                <option value="fa-hands-praying">Oração</option>
+                                <option value="fa-video">Mídia/Transmissão</option>
+                                <option value="fa-broom">Manutenção/Limpeza</option>
+                                <option value="fa-cross">Cruz</option>
+                            </select>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-salvar">Cadastrar ministério</button>
+                    <p id="status-msg" role="status"></p>
+                </form>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/cadastro-ministerio.js"></script>
+
+</body>
+</html>

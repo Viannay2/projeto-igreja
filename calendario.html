@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+    <style>
+        /* Só pro Calendário — cards ficam clicáveis, com destaque no selecionado */
+        .card-calendario{
+            cursor:pointer;
+            border:2px solid transparent;
+        }
+        .card-calendario.selecionado{
+            border-color:var(--magenta);
+        }
+        .card-calendario h2{
+            font-size:30px;
+        }
+    </style>
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="calendario.html" class="active" aria-current="page">
+                <i class="fa-solid fa-calendar-check"></i>
+                Calendário</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Calendário do Dia</h1>
+
+                <div class="topo">
+                    <input type="date" id="campo-data-calendario" style="width:auto;">
+                </div>
+            </header>
+
+            <section class="cards" id="cards-resumo-dia">
+                <!-- Preenchido pelo calendario.js -->
+            </section>
+
+            <section id="detalhe-dia" class="lista-eventos">
+                <!-- Preenchido pelo calendario.js -->
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/calendario.js"></script>
+
+</body>
+</html>

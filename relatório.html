@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html" class="active" aria-current="page"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Relatórios</h1>
+
+                <div class="topo">
+
+                    <a href="perfil.html">
+                        <img src="imagens/avatar.png" alt="Administrador">
+                    </a>
+                </div>
+            </header>
+
+            <section class="lista-eventos">
+                <h2>Relatórios disponíveis</h2>
+                <p class="hint-eventos">Gere um PDF pronto pra imprimir ou compartilhar com a liderança.</p>
+
+                <div class="grid-eventos">
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-users"></i>
+                        <h3>Membros ativos</h3>
+                        <p class="data-card">Lista completa com contato</p>
+                        <button type="button" id="btn-pdf-membros-ativos" class="btn-voltar">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Gerar PDF
+                        </button>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-cake-candles"></i>
+                        <h3>Aniversariantes do mês</h3>
+                        <p class="data-card">Nome e data de nascimento</p>
+                        <button type="button" id="btn-pdf-aniversariantes" class="btn-voltar">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Gerar PDF
+                        </button>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-water"></i>
+                        <h3>Batizados</h3>
+                        <p class="data-card">Membros batizados por período</p>
+                        <button type="button" id="btn-pdf-batizados" class="btn-voltar">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Gerar PDF
+                        </button>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-people-roof"></i>
+                        <h3>Famílias</h3>
+                        <p class="data-card">Agrupado por família</p>
+                        <button type="button" id="btn-pdf-familias" class="btn-voltar">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Gerar PDF
+                        </button>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-cross"></i>
+                        <h3>Ministérios</h3>
+                        <p class="data-card">Integrantes por ministério</p>
+                        <button type="button" id="btn-pdf-ministerios" class="btn-voltar">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Gerar PDF
+                        </button>
+                    </div>
+
+                    <div class="card-evento">
+                        <i class="fa-solid fa-user-plus"></i>
+                        <h3>Visitantes</h3>
+                        <p class="data-card">Últimos 30 dias</p>
+                        <button type="button" id="btn-pdf-visitantes" class="btn-voltar">
+                            <i class="fa-solid fa-file-arrow-down"></i>
+                            Gerar PDF
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/relatorios.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestão da igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html" class="active" aria-current="page"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="calendario.html"><i class="fa-solid fa-calendar-check"></i>
+                Calendário</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+
+                <h1>Painel Administrativo</h1>
+
+                <div class="topo">
+
+                    <div class="container-notificacoes">
+                        <button id="botao-notificacoes" aria-label="Notificações">
+                            <i class="fa-solid fa-bell"></i>
+                            <span id="badge-notificacoes" class="badge-contador" hidden>0</span>
+                        </button>
+
+                        <div id="painel-notificacoes" class="painel-notificacoes" hidden>
+                            <h3>Notificações</h3>
+                            <ul id="lista-notificacoes"></ul>
+                        </div>
+                    </div>
+
+                    <img src="imagens/avatar.png" alt="Administrador">
+                </div>
+            </header>
+
+            <a href="chamada.html?ministerio=Culto" style="display:block; text-decoration:none; background:var(--degrade-logo); color:#fff; border-radius:12px; padding:16px 20px; margin-bottom:20px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 5px 18px rgba(0,0,0,.08);">
+                <span style="display:flex; align-items:center; gap:10px; font-weight:600;">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                    Fazer chamada geral do culto de hoje
+                </span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <section class="cards">
+
+                <a href="membros.html" class="card" style="text-decoration:none; color:inherit; cursor:pointer;">
+                    <i class="fa-solid fa-users"></i>
+
+                    <h2 id="card-total">—</h2>
+
+                    <p>Membros</p>
+
+                </a>
+
+                <a href="membros.html?filtro=nao_batizados" class="card" id="card-nao-batizados-container" style="text-decoration:none; color:inherit; cursor:pointer;"><i class="fa-solid fa-droplet-slash"></i>
+
+                    <h2 id="card-nao-batizados">—</h2>
+
+                    <p>Não batizados</p>
+                </a>
+
+                <div class="card" id="card-aniversariantes-container" style="position:relative; cursor:pointer;">
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                   <h2 id="card-aniversariantes">—</h2>
+
+                   <p>Aniversariantes do mês</p>
+
+                   <div id="painel-aniversariantes" class="painel-notificacoes" hidden style="left:0; right:auto; text-align:left;">
+                        <h3>Aniversariantes do mês</h3>
+                        <ul id="lista-aniversariantes"></ul>
+                        <a href="membros.html?filtro=aniversariantes" style="display:block; margin-top:10px; font-size:13px;">Ver na lista de membros →</a>
+                   </div>
+                </div>
+
+                <div class="card" id="card-faltas-container">
+                    <i class="fa-solid fa-user-slash"></i>
+
+                   <h2 id="card-faltas">—</h2>
+
+                   <p>Faltas (10+ dias sem vir)</p>
+
+                </div>
+            </section>
+
+            <section class="lista-eventos">
+                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+                    <div>
+                        <h2>Crescimento da Igreja</h2>
+                        <p class="dica-campo">Novos membros cadastrados no período</p>
+                    </div>
+                    <select id="filtro-periodo-crescimento" style="padding:8px 12px; border-radius:8px; border:1px solid var(--linha, #ddd);">
+                        <option value="30">Últimos 30 dias</option>
+                        <option value="90">Últimos 90 dias</option>
+                        <option value="180" selected>Últimos 6 meses</option>
+                        <option value="365">Último 1 ano</option>
+                    </select>
+                </div>
+                <canvas id="grafico-crescimento" height="90"></canvas>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"></script>
+
+    <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/index.js"></script>
+
+</body>
+</html>

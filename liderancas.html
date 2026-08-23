@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liderança dos Ministérios — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html" class="active" aria-current="page">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Liderança dos Ministérios</h1>
+
+                <div class="topo">
+                    <a href="configuracoes.html" class="btn-voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Voltar
+                    </a>
+                </div>
+            </header>
+
+            <section class="form-membro">
+                <p class="dica-campo" style="margin-bottom:16px;">
+                    A pessoa precisa já ter um login criado (em "Criar acesso para funcionário"
+                    ou pelo autocadastro) antes de virar líder de um ministério.
+                </p>
+
+                <form id="form-lideranca" novalidate>
+                    <div class="campo">
+                        <label for="usuario_id" class="obrigatorio">Pessoa</label>
+                        <select id="usuario_id" name="usuario_id" required>
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="ministerio_nome" class="obrigatorio">Ministério</label>
+                        <select id="ministerio_nome" name="ministerio_nome" required>
+                            <option value="">Selecione</option>
+                        </select>
+                    </div>
+
+                    <div class="campo">
+                        <label for="papel" class="obrigatorio">Papel</label>
+                        <select id="papel" name="papel" required>
+                            <option value="lider">Líder</option>
+                            <option value="vice">Vice-líder</option>
+                            <option value="auxiliar">Auxiliar</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-salvar">Atribuir liderança</button>
+                    <p id="status-msg" role="status"></p>
+                </form>
+            </section>
+
+            <section class="membros">
+                <h2>Lideranças atuais</h2>
+
+                <table>
+                    <caption class="sr-only">Lista de lideranças atribuídas</caption>
+                    <thead>
+                        <tr>
+                            <th>Pessoa</th>
+                            <th>Ministério</th>
+                            <th>Papel</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody-liderancas"></tbody>
+                </table>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/liderancas.js"></script>
+
+</body>
+</html>

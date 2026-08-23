@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Perfil — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Meu Perfil</h1>
+
+                <div class="topo">
+                    <button aria-label="Notificações">
+                        <i class="fa-solid fa-bell"></i>
+                    </button>
+                </div>
+            </header>
+
+            <section class="perfil-topo">
+                <div class="avatar-grande">
+                    <img src="imagens/avatar.png" alt="Foto do administrador" id="avatar-preview">
+                    <label for="upload-avatar" class="btn-trocar-foto">
+                        <i class="fa-solid fa-camera"></i>
+                        Trocar foto
+                    </label>
+                    <input type="file" id="upload-avatar" accept="image/*" class="sr-only">
+                </div>
+                <div class="perfil-topo-texto">
+                    <h2 id="perfil-nome-exibicao">Administrador</h2>
+                    <p id="perfil-cargo-exibicao">Secretaria da Igreja</p>
+                </div>
+            </section>
+
+            <section class="form-membro">
+                <form id="form-perfil" novalidate>
+
+                    <fieldset>
+                        <legend>Dados pessoais</legend>
+
+                        <div class="campo">
+                            <label for="nome" class="obrigatorio">Nome completo</label>
+                            <input type="text" id="nome" name="nome" required value="Administrador">
+                        </div>
+
+                        <div class="campo">
+                            <label for="cargo">Cargo / função na igreja</label>
+                            <input type="text" id="cargo" name="cargo" placeholder="Ex: Secretário(a), Pastor, Líder de ministério" value="Secretaria da Igreja">
+                        </div>
+
+                        <div class="campo">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="nome@email.com">
+                        </div>
+
+                        <div class="campo">
+                            <label for="telefone">Telefone</label>
+                            <input type="tel" id="telefone" name="telefone" placeholder="(11) 91234-5678">
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-salvar">Salvar alterações</button>
+                    <p id="status-msg" role="status"></p>
+                </form>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/perfil.js"></script>
+
+</body>
+</html>

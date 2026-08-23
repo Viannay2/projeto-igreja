@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criar Conta — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="tela-publica">
+        <div class="card-auth card-auth-largo">
+
+            <div class="auth-logo">
+                <i class="fa-solid fa-church"></i>
+                <h1>Igreja</h1>
+            </div>
+
+            <h2 class="auth-titulo">Criar minha conta</h2>
+            <p class="auth-subtitulo">Preencha seus dados — isso já serve como seu cadastro de membro</p>
+
+            <form id="form-autocadastro" novalidate>
+
+                <fieldset>
+                    <legend>Dados pessoais</legend>
+
+                    <div class="campo">
+                        <label for="nome_completo" class="obrigatorio">Nome completo</label>
+                        <input type="text" id="nome_completo" name="nome_completo" required placeholder="Seu nome completo">
+                    </div>
+
+                    <div class="campo">
+                        <label for="data_nascimento">Data de nascimento</label>
+                        <input type="date" id="data_nascimento" name="data_nascimento">
+                    </div>
+
+                    <div class="campo">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" name="telefone" placeholder="(11) 91234-5678">
+                    </div>
+
+                    <div class="campo">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" name="endereco" placeholder="Rua, número, bairro">
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Vida na igreja</legend>
+
+                    <div class="campo">
+                        <label for="data_batismo">Data de batismo</label>
+                        <input type="date" id="data_batismo" name="data_batismo">
+                        <p class="dica-campo">Deixe em branco se ainda não foi batizado(a)</p>
+                    </div>
+
+                    <div class="campo">
+                        <label for="familia">Família</label>
+                        <input type="text" id="familia" name="familia" placeholder="Ex: Família Santos">
+                        <p class="dica-campo">Deixe em branco se não souber ainda</p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Acesso à conta</legend>
+
+                    <div class="campo">
+                        <label for="email" class="obrigatorio">E-mail</label>
+                        <input type="email" id="email" name="email" required placeholder="nome@email.com">
+                    </div>
+
+                    <div class="campo">
+                        <label for="senha" class="obrigatorio">Senha</label>
+                        <input type="password" id="senha" name="senha" required minlength="6" placeholder="Mínimo 6 caracteres">
+                    </div>
+
+                    <div class="campo">
+                        <label for="confirmar_senha" class="obrigatorio">Confirmar senha</label>
+                        <input type="password" id="confirmar_senha" name="confirmar_senha" required placeholder="Digite a senha de novo">
+                    </div>
+                </fieldset>
+
+                <div class="campo campo-consentimento">
+                    <label class="checkbox-consentimento">
+                        <input type="checkbox" id="consentimento" name="consentimento" required>
+                        Li e concordo que meus dados serão usados apenas pela administração da igreja, e posso pedir a exclusão deles quando quiser.
+                    </label>
+                </div>
+
+                <button type="submit" class="btn-salvar">Criar conta</button>
+                <p id="status-msg" role="status"></p>
+            </form>
+
+            <p class="auth-rodape">
+                Já tem conta? <a href="login.html">Entrar</a>
+            </p>
+
+        </div>
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/autocadastro.js"></script>
+
+</body>
+</html>

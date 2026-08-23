@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Novo Acesso — Sistema de Gestão da Igreja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+    <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo</a>
+
+    <div class="container">
+
+        <aside class="sidebar">
+            <div class="logo"><i class="fa-solid fa-church"></i>
+                <h2>Igreja</h2>
+            </div>
+            <nav>
+                <a href="index.html"><i class="fa-solid fa-house"></i>Dashboard</a>
+
+                <a href="membros.html"><i class="fa-solid fa-users"></i>Membros</a>
+                <a href="eventos.html"><i class="fa-solid fa-calendar-days"></i>
+                Eventos</a>
+
+                <a href="ministério.html">
+                <i class="fa-solid fa-cross"></i>
+                Ministérios</a>
+
+                <a href="visitante.html"><i class="fa-solid fa-user-plus"></i>
+                Visitantes</a>
+
+                <a href="relatório.html"><i class="fa-solid fa-file-pdf"></i>
+                Relatórios</a>
+
+                <a href="configuracoes.html" class="active" aria-current="page">
+                <i class="fa-solid fa-gear"></i>
+                Configurações</a>
+
+            </nav>
+        </aside>
+
+        <main id="conteudo-principal">
+
+            <header>
+                <h1>Criar Acesso para Funcionário</h1>
+
+                <div class="topo">
+                    <a href="configuracoes.html" class="btn-voltar">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        Voltar
+                    </a>
+                </div>
+            </header>
+
+            <section class="form-membro">
+                <form id="form-funcionario" novalidate>
+
+                    <fieldset>
+                        <legend>Dados do acesso</legend>
+
+                        <div class="campo">
+                            <label for="nome_completo" class="obrigatorio">Nome completo</label>
+                            <input type="text" id="nome_completo" name="nome_completo" required placeholder="Ex: Joana Secretária">
+                        </div>
+
+                        <div class="campo">
+                            <label for="email" class="obrigatorio">E-mail</label>
+                            <input type="email" id="email" name="email" required placeholder="nome@email.com">
+                        </div>
+
+                        <div class="campo">
+                            <label for="senha" class="obrigatorio">Senha provisória</label>
+                            <input type="password" id="senha" name="senha" required minlength="6">
+                            <p class="dica-campo">A pessoa pode trocar depois. Mínimo de 6 caracteres.</p>
+                        </div>
+
+                        <div class="campo">
+                            <label for="cargo" class="obrigatorio">Cargo</label>
+                            <select id="cargo" name="cargo" required>
+                                <option value="">Selecione</option>
+                                <option value="secretaria">Secretaria</option>
+                                <option value="administrador">Administrador</option>
+                            </select>
+                            <p class="dica-campo">Isso não bloqueia nada no sistema ainda — é só pra identificar quem é quem, por enquanto.</p>
+                        </div>
+                    </fieldset>
+
+                    <button type="submit" class="btn-salvar">Criar acesso</button>
+                    <p id="status-msg" role="status"></p>
+                </form>
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="js/api.js"></script>
+    <script src="js/storage.js"></script>
+    <script src="js/layout.js"></script>
+    <script src="js/cadastro-funcionario.js"></script>
+
+</body>
+</html>
