@@ -1,19 +1,15 @@
+const sessao = getSessao();
+const mensagem = document.getElementById("mensagem-boas-vindas");
 
+if (sessao) {
+  mensagem.textContent = `Você entrou como ${sessao.nome} (${sessao.email}).`;
+} else {
+  // Se não tem sessão salva, manda de volta pro login
+  window.location.href = "login.html";
+}
 
-const formLogin = document.getElementById("form-login");
-const statusMsgLogin = document.getElementById("status-msg");
-
-formLogin.addEventListener("submit", async function (e) {
+document.getElementById("link-sair").addEventListener("click", (e) => {
   e.preventDefault();
-
-  const dados = Object.fromEntries(new FormData(formLogin).entries());
-  const usuario = await verificarLogin(dados.email, dados.senha);
-
-  if (usuario) {
-    salvarSessao(usuario);
-    window.location.href = "area_membro.html";
-  } else {
-    statusMsgLogin.textContent = "E-mail ou senha incorretos.";
-    statusMsgLogin.className = "show err";
-  }
+  sair();
+  window.location.href = "login.html";
 });

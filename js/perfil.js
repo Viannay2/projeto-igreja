@@ -1,11 +1,32 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+// ======================================================
+// PERFIL
+// ======================================================
+
 const formPerfil = document.getElementById("form-perfil");
+
 const statusMsgPerfil = document.getElementById("status-msg");
 
 const campoNome = document.getElementById("nome");
+
 const campoCargo = document.getElementById("cargo");
+
 const nomeExibicao = document.getElementById("perfil-nome-exibicao");
+
 const cargoExibicao = document.getElementById("perfil-cargo-exibicao");
+
 const inputFoto = document.getElementById("upload-avatar");
+
 const previewFoto = document.getElementById("avatar-preview");
 
 let fotoBase64Atual = null; // guarda a foto convertida, pronta pra salvar

@@ -1,3 +1,15 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+
 const gridMinisterios = document.getElementById("grid-ministerios");
 
 async function montarMinisterios() {

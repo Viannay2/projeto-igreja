@@ -12,6 +12,20 @@ python backups.py
 
 python -m uvicorn main:app --reload
 
+copy sistema_igreja.db sistema_igreja_antes_da_restauracao.db
+
+dir *.db
+dir backups
+
+
+esse primeiro
+copy backups\sistema_igreja_2026-08-23.db sistema_igreja.db /Y
+
+ou esse 
+Copy-Item "backups\sistema_igreja_2026-08-23.db" "sistema_igreja.db" -Force
+
+esse segundo
+python -c "import sqlite3; c=sqlite3.connect('sistema_igreja.db'); print(c.execute('SELECT id,nome_completo FROM membros').fetchall()); c.close()"
 
 AGORA
 
@@ -75,3 +89,170 @@ SISTEMA
 │
 └── Igreja 3
     └── ...
+
+
+    E aquelas melhorias que você pediu ficam guardadas no nosso plano
+
+Também temos:
+
+Cadastro: campo relacionado a RH/“ficha RH”;
+Ação Social: cadastro da pessoa acompanhada;
+liderança responsável;
+histórico de todos os atendimentos;
+datas de cada atendimento;
+acompanhamento por até 1 ano;
+alertas de 3 meses, 4 meses etc.;
+controle de quantidade de recebimentos;
+alerta quando atingir, por exemplo, o 3º atendimento dentro do período de 1 ano;
+histórico permanente dos atendimentos.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Agora, antes de 10:30:
+
+Proteger o index.html.
+Proteger as demais páginas administrativas.
+Fazer o teste no GitHub Pages, não apenas no VS Code.
+Fazer commit e push.
+Confirmar que, sem login, ninguém consegue entrar.
+
+Depois:
+
+revisar segurança da API;
+conferir se não há senha, segredo ou chave exposta no GitHub;
+separar área pública da igreja da área administrativa;
+criar permissões por cargo;
+avaliar deixar o repositório privado.
+Próximo passo AGORA
+
+Abra:
+
+js/index.js
+
+e coloque como primeiras linhas:
+
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+    window.location.href = "login.html";
+}
+
+Não coloque isso no index.html por enquanto.
+
+Depois me mande o começo do seu index.js aqui. Eu confiro antes de você salvar/mandar para o GitHub.
+
+E uma coisa importante: não vamos correr e quebrar o que já está funcionando só por medo do código público. Vamos fechar as portas corretamente, uma por uma. 🔐
+
+// ======================================================
+
+// PROTEÇÃO DA PÁGINA
+
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+
+    window.location.href = "login.html";
+
+}
+
+
+
+async function montarDashboard() {
+
+  const membros = await getMembros();.....
+olha ja tinha colocado é para colar novamente ?
+
+'Isso não significa que alguém automaticamente vai conseguir usar seu banco ou entrar no sistema  ' o broplema não é esse é copiar a ideia pq la eu sei não tem banco de dadosainda e nem grava dados 
+qual o proximo?
+
+Exatamente. Não precisa colar novamente. 👍
+
+Seu index.js já está protegido:
+
+const sessao = getSessao();
+
+if (!sessao) {
+    window.location.href = "login.html";
+}
+
+Então não vamos mexer nele agora.
+
+E agora entendi sua preocupação: não é alguém acessar o banco; é alguém ver a ideia/projeto no GitHub e copiar. Nesse caso, faz sentido proteger o código-fonte.
+
+Próximo passo: colocar o GitHub como privado
+
+Como o sistema ainda está em desenvolvimento, eu recomendo tornar o repositório projeto-igreja privado.
+
+Isso não impede o GitHub Pages de continuar funcionando? Precisamos ter cuidado aqui, porque a forma como o Pages está configurado pode depender da visibilidade do repositório/plano.
+
+Então não faça nenhuma alteração ainda.
+
+Primeiro vamos verificar uma coisa:
+
+👉 Abra o GitHub do projeto e me diga se aparece Public ao lado do nome do repositório.
+
+Se estiver Public, aí eu te passo o caminho seguro para deixar o código protegido sem derrubar o site que estamos testando.
+
+E depois disso nosso próximo trabalho será justamente este:
+
+Login → proteção de todas as páginas administrativas → área pública da igreja → permissões por cargo.
+
+Essa separação que você pensou de visitante entrar sem ser membro, ver horários de culto, endereço, pastores, próximos eventos etc., é uma ótima evolução do sistema. Primeiro fechamos a área administrativa.
+
+eu lembro que coloquei privado
+
+Sim, pode ser que você tenha colocado como privado mesmo. 👍
+
+Mas tem uma diferença importante: o site que você está acessando pelo GitHub Pages continua público, mesmo que o repositório esteja privado. Ou seja:
+
+🔒 Repositório privado → protege o código-fonte de outras pessoas.
+🌐 GitHub Pages → o site publicado continua acessível pelo endereço viannay2.github.io/....
+
+E isso explica a sua preocupação: alguém pode acessar o site, mas não necessariamente consegue ver o código do repositório privado.
+
+Vamos confirmar antes de mexer
+
+Abra o GitHub e entre em:
+
+Viannay2 → projeto-igreja
+
+Na parte de cima, ao lado de projeto-igreja, deve aparecer:
+
+🔒 Private
+
+ou
+
+🌐 Public
+
+Se aparecer Private, não precisamos mexer nisso agora.
+
+E o próximo passo do nosso sistema
+
+Você descobriu um problema mais importante:
+
+Entrar diretamente em index.html não deve permitir acesso sem login.
+
+Você já colocou a proteção no index.js. Agora precisamos fazer a mesma proteção nas outras páginas administrativas.
+
+Não vamos sair colocando código aleatoriamente. Vamos fazer uma lista das páginas que precisam ser protegidas e verificar uma por uma.
+
+Primeiro: confirme para mim se aparece Private no GitHub. Depois seguimos para proteger as páginas.
+
+Chat pausado até o limite ser renovado à

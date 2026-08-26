@@ -1,3 +1,18 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+// ======================================================
+// CADASTRO / EDIÇÃO DE EVENTO
+// ======================================================
+
 const formEvento = document.getElementById("form-evento");
 const statusMsgEvento = document.getElementById("status-msg");
 const tituloEvento = document.querySelector("header h1");

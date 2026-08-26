@@ -1,3 +1,18 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+// ======================================================
+// CADASTRO DE FUNCIONÁRIO
+// ======================================================
+
 const formFuncionario = document.getElementById("form-funcionario");
 const statusMsgFuncionario = document.getElementById("status-msg");
 

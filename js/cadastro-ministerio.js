@@ -1,3 +1,21 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+// ======================================================
+// CADASTRO / EDIÇÃO DE MINISTÉRIO
+// ======================================================
+
+
+
+
 const formMinisterio = document.getElementById("form-ministerio");
 const statusMsgMinisterio = document.getElementById("status-msg");
 const tituloMinisterio = document.querySelector("header h1");

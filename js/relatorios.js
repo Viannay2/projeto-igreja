@@ -1,3 +1,14 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
 // ===============================
 // relatorios.js
 // Cada função monta um PDF diferente, usando jsPDF + autoTable.

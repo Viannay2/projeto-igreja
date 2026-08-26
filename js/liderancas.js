@@ -1,3 +1,15 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+    window.location.href = "login.html";
+}
+
+
+
 const formLideranca = document.getElementById("form-lideranca");
 const statusMsgLideranca = document.getElementById("status-msg");
 const campoUsuario = document.getElementById("usuario_id");

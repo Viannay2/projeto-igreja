@@ -1,3 +1,18 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+
+
+
+
 // ===== Calcula quantos dias faltam pra uma data =====
 function diasRestantes(dataString) {
   const hoje = new Date();

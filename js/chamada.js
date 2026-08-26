@@ -1,3 +1,15 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+
 const parametros = new URLSearchParams(window.location.search);
 const nomeMinisterio = parametros.get("ministerio");
 

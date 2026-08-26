@@ -1,3 +1,18 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+// ======================================================
+// CONFIGURAÇÕES
+// ======================================================
+
 const campoNomeIgreja = document.getElementById("nome_igreja");
 const nomeExibicaoConfig = document.getElementById("config-nome-exibicao");
 const inputLogo = document.getElementById("upload-logo");

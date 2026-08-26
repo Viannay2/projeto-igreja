@@ -1,6 +1,21 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
 const form = document.getElementById("form-cadastro");
 const statusMsg = document.getElementById("status-msg");
 const tituloPagina = document.querySelector("header h1");
+
+
+
+
 const botaoSalvar = document.querySelector(".btn-salvar");
 const containerCheckboxMinisterios = document.getElementById("lista-checkbox-ministerios");
 

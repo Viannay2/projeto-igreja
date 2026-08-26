@@ -1,3 +1,15 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+
 const corpoTabela = document.getElementById("tbody-membros");
 const campoPesquisa = document.getElementById("campo-pesquisa");
 const filtroStatus = document.getElementById("filtro-status");

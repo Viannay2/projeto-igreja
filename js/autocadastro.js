@@ -1,3 +1,7 @@
+
+
+
+
 const formAuto = document.getElementById("form-autocadastro");
 const statusMsgAuto = document.getElementById("status-msg");
 

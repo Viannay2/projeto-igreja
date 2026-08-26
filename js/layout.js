@@ -1,3 +1,6 @@
+
+
+
 // ===============================
 // layout.js
 // Roda em toda página. Pega o logo da igreja e a foto do admin

@@ -1,3 +1,14 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
 const formVisitante = document.getElementById("form-visitante");
 const statusMsgVisitante = document.getElementById("status-msg");
 const tituloVisitante = document.querySelector("header h1");

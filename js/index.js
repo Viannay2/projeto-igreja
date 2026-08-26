@@ -1,3 +1,15 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+    window.location.href = "login.html";
+}
+
+
+
 async function montarDashboard() {
   const membros = await getMembros();
 

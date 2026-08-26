@@ -1,3 +1,18 @@
+// ======================================================
+// PROTEÇÃO DA PÁGINA
+// ======================================================
+
+const sessao = getSessao();
+
+if (!sessao) {
+  window.location.href = "login.html";
+}
+
+
+// ======================================================
+// CALENDÁRIO
+// ======================================================
+
 const campoData = document.getElementById("campo-data-calendario");
 const cardsResumo = document.getElementById("cards-resumo-dia");
 const detalheDia = document.getElementById("detalhe-dia");
