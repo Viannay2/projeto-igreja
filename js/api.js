@@ -8,7 +8,7 @@ const API_URL = "https://sistema-igreja-api-w30h.onrender.com";
 
 
 // ======================================================
-// FUNÇÃO AUXILIAR DE AUTENTICAÇÃO
+// AUTENTICAÇÃO
 // ======================================================
 
 // Pega o token salvo no navegador
@@ -40,7 +40,7 @@ function headersComAuth(extraHeaders = {}) {
 const URL_API = `${API_URL}/api/membros`;
 
 
-// Busca a lista de membros na API
+// Busca a lista de membros
 async function getMembros() {
   try {
     const resposta = await fetch(URL_API, {
@@ -63,7 +63,7 @@ async function getMembros() {
 }
 
 
-// Cadastra um novo membro na API
+// Cadastra um novo membro
 async function addMembro(membro) {
   const resposta = await fetch(URL_API, {
     method: "POST",
@@ -83,7 +83,7 @@ async function addMembro(membro) {
 }
 
 
-// Busca um único membro pelo ID
+// Busca um membro pelo ID
 async function buscarMembro(id) {
   const resposta = await fetch(
     `${URL_API}/${id}`,
@@ -102,7 +102,7 @@ async function buscarMembro(id) {
 }
 
 
-// Atualiza um membro existente
+// Atualiza um membro
 async function editarMembro(id, membro) {
   const resposta = await fetch(
     `${URL_API}/${id}`,
@@ -152,6 +152,7 @@ async function excluirMembro(id) {
 const URL_API_VISITANTES = `${API_URL}/api/visitantes`;
 
 
+// Busca visitantes
 async function getVisitantes() {
   try {
     const resposta = await fetch(
@@ -177,6 +178,7 @@ async function getVisitantes() {
 }
 
 
+// Cadastra visitante
 async function addVisitante(visitante) {
   const resposta = await fetch(
     URL_API_VISITANTES,
@@ -199,6 +201,7 @@ async function addVisitante(visitante) {
 }
 
 
+// Exclui visitante
 async function excluirVisitante(id) {
   const resposta = await fetch(
     `${URL_API_VISITANTES}/${id}`,
@@ -218,6 +221,7 @@ async function excluirVisitante(id) {
 }
 
 
+// Busca visitante
 async function buscarVisitante(id) {
   const resposta = await fetch(
     `${URL_API_VISITANTES}/${id}`,
@@ -236,6 +240,7 @@ async function buscarVisitante(id) {
 }
 
 
+// Edita visitante
 async function editarVisitante(id, visitante) {
   const resposta = await fetch(
     `${URL_API_VISITANTES}/${id}`,
@@ -266,7 +271,7 @@ const URL_API_CHAMADA = `${API_URL}/api/chamada`;
 const URL_API_PRESENCAS = `${API_URL}/api/presencas`;
 
 
-// Salva a chamada de um dia + ministério
+// Salva uma chamada
 async function salvarChamada(data, ministerio, registros) {
   const resposta = await fetch(
     URL_API_CHAMADA,
@@ -293,7 +298,7 @@ async function salvarChamada(data, ministerio, registros) {
 }
 
 
-// Busca todas as presenças
+// Busca presenças
 async function getPresencas() {
   const resposta = await fetch(
     URL_API_PRESENCAS,
@@ -321,21 +326,27 @@ const URL_API_USUARIOS = `${API_URL}/api/usuarios`;
 const URL_API_LOGIN = `${API_URL}/api/login`;
 
 
-// Cadastra um novo usuário
+// Cadastra usuário
 async function criarUsuario(usuario) {
   const resposta = await fetch(
     URL_API_USUARIOS,
     {
       method: "POST",
-      headers: headersComAuth({
+      headers: {
         "Content-Type": "application/json"
-      }),
+      },
       body: JSON.stringify(usuario)
     }
   );
 
   if (!resposta.ok) {
-    const erro = await resposta.json();
+    let erro;
+
+    try {
+      erro = await resposta.json();
+    } catch {
+      erro = {};
+    }
 
     throw new Error(
       erro.detail || "Não foi possível cadastrar"
@@ -346,7 +357,7 @@ async function criarUsuario(usuario) {
 }
 
 
-// Verifica login
+// Faz login
 async function verificarLogin(email, senha) {
   try {
     const resposta = await fetch(
@@ -371,13 +382,17 @@ async function verificarLogin(email, senha) {
 
   } catch (erro) {
     console.error("Erro ao fazer login:", erro);
-
     return null;
   }
 }
 
 
-// Testa o token atual
+// ======================================================
+// TESTE DO TOKEN
+// ======================================================
+
+// Esta função só funcionará quando a rota
+// /api/teste-token existir no main.py.
 async function testarToken() {
   const resposta = await fetch(
     `${API_URL}/api/teste-token`,
@@ -388,7 +403,8 @@ async function testarToken() {
 
   if (!resposta.ok) {
     throw new Error(
-      "Token inválido ou expirado: " + resposta.status
+      "Token inválido ou rota não encontrada: " +
+      resposta.status
     );
   }
 
@@ -403,6 +419,7 @@ async function testarToken() {
 const URL_API_USUARIOS_LISTA = `${API_URL}/api/usuarios`;
 
 
+// Lista usuários
 async function listarUsuarios() {
   const resposta = await fetch(
     URL_API_USUARIOS_LISTA,
@@ -429,6 +446,7 @@ async function listarUsuarios() {
 const URL_API_LIDERANCAS = `${API_URL}/api/liderancas`;
 
 
+// Busca lideranças
 async function getLiderancas() {
   const resposta = await fetch(
     URL_API_LIDERANCAS,
@@ -448,6 +466,7 @@ async function getLiderancas() {
 }
 
 
+// Atribui liderança
 async function atribuirLideranca(dados) {
   const resposta = await fetch(
     URL_API_LIDERANCAS,
@@ -461,7 +480,13 @@ async function atribuirLideranca(dados) {
   );
 
   if (!resposta.ok) {
-    const erro = await resposta.json();
+    let erro;
+
+    try {
+      erro = await resposta.json();
+    } catch {
+      erro = {};
+    }
 
     throw new Error(
       erro.detail ||
@@ -473,6 +498,7 @@ async function atribuirLideranca(dados) {
 }
 
 
+// Remove liderança
 async function removerLideranca(id) {
   const resposta = await fetch(
     `${URL_API_LIDERANCAS}/${id}`,
@@ -501,6 +527,7 @@ const URL_API_ANOTACOES =
   `${API_URL}/api/anotacoes`;
 
 
+// Busca anotações
 async function getAnotacoes() {
   const resposta = await fetch(
     URL_API_ANOTACOES,
@@ -520,6 +547,7 @@ async function getAnotacoes() {
 }
 
 
+// Cria anotação
 async function criarAnotacao(dados) {
   const resposta = await fetch(
     URL_API_ANOTACOES,
@@ -543,6 +571,7 @@ async function criarAnotacao(dados) {
 }
 
 
+// Exclui anotação
 async function excluirAnotacao(id) {
   const resposta = await fetch(
     `${URL_API_ANOTACOES}/${id}`,
@@ -561,4 +590,3 @@ async function excluirAnotacao(id) {
 
   return await resposta.json();
 }
-

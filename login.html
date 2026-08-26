@@ -3,18 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Entrar — Sistema de Gestão da Igreja</title>
 
     <link rel="stylesheet" href="css/style.css">
 
     <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
+
 <body>
 
     <div class="tela-publica">
+
         <div class="card-auth">
 
+            <!-- LOGO -->
             <div class="auth-logo">
                 <i class="fa-solid fa-church"></i>
                 <h1>Igreja</h1>
@@ -22,28 +26,79 @@
 
             <h2 class="auth-titulo">Entrar</h2>
 
+            <!-- LOGIN -->
             <form id="form-login" novalidate>
 
                 <div class="campo">
-                    <label for="email" class="obrigatorio">E-mail</label>
-                    <input type="email" id="email" name="email" required placeholder="nome@email.com">
+
+                    <label for="email" class="obrigatorio">
+                        E-mail
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        autocomplete="username"
+                        placeholder="nome@email.com"
+                    >
+
                 </div>
+
 
                 <div class="campo">
-                    <label for="senha" class="obrigatorio">Senha</label>
-                    <input type="password" id="senha" name="senha" required placeholder="••••••••">
+
+                    <label for="senha" class="obrigatorio">
+                        Senha
+                    </label>
+
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        required
+                        autocomplete="current-password"
+                        placeholder="Digite sua senha"
+                    >
+
                 </div>
 
-                <button type="submit" class="btn-salvar">Entrar</button>
-                <p id="status-msg" role="status"></p>
+
+                <button
+                    type="submit"
+                    class="btn-salvar"
+                    id="btn-login"
+                >
+                    Entrar
+                </button>
+
+
+                <!-- Mensagem de login -->
+                <p
+                    id="status-msg"
+                    role="status"
+                    aria-live="polite"
+                ></p>
+
             </form>
 
-            <p class="auth-rodape">
-                Ainda não tem conta? <a href="autocadastro.html">Cadastre-se</a>
+
+            <!-- FUTURAMENTE:
+                 recuperação de senha poderá entrar aqui,
+                 mas será feita de forma segura pela API.
+            -->
+            <p class="auth-ajuda">
+                Problemas para entrar?
+                <span>Procure a administração da igreja.</span>
             </p>
 
         </div>
+
     </div>
+
+
+    <!-- JAVASCRIPT DO SISTEMA -->
 
     <script src="js/api.js"></script>
     <script src="js/storage.js"></script>
